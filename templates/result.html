@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /> -->
+    <title>Rainfall-Prediction</title>
+    <link rel="stylesheet" href="../static/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={{url_for('static',filename='style.css')}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=Merriweather&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      background: url('https://images.unsplash.com/photo-1562781105-c53c27ff6007?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZSUyMHJhaW58ZW58MHx8MHx8&w=1000&q=80');
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/19d7575d71/maharashtra/"
+      data-label_1="MAHARASHTRA"
+      data-label_2="WEATHER"
+      data-theme="gray"
+      >MAHARASHTRA WEATHER</a
+    >
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+
+<input type="checkbox" id="check">
+<!--header>
+</div>
+<h2><a href="/" class="logo"><div>RAINFALL<br> <span>PREDICTION FOR CROP CULTIVATION</span></div> </a></h2>
+<div class="navigation">
+  <a href="/">Home</a>
+  
+  <a href="/predictionhome">Predictor</a>
+</div>
+<label for="check">
+<i class="fas fa-bars menu-btn"></i>
+<i class="fas fa-times close-btn"></i>
+</label>
+</header-->
+    <br><div class="container">
+      <h1 class="text-center m-3 badge-primary text-wrap font1" style="height:70px;">
+        Rainfall Prediction &emsp;&emsp;&emsp;&emsp;
+          
+          <a href="/" style="color:white; font-size:18px">Home</a>&emsp;&emsp;
+         
+          <a href="/predictionhome" style="color:white; font-size:18px">Predictor</a>
+          
+      </h1>
+      <br><br><div class="card container" style="width: 50%">
+        <div class="card-body">
+          <form action="/" method="post">
+            <div class="form-group">
+              <label for="formGroupExampleInput1">Month</label>
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupExampleInput1"
+                name="Month"
+                placeholder="{{Month}}"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Year</label>
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupExampleInput2"
+                name="Year"
+                placeholder="{{Year}}"
+                required
+              />
+            </div>
+            <h2
+              class="text-center badge-primary1 text-wrap font3"
+              style="color: #a00000"
+            ><br>
+              The Rainfall Predicted is {{res}} mm
+            </h2>
+          </form>
+        </div>
+
+        <center>
+          <a href="/"
+            ><button type="submit" class="btn btn-primary font2">
+              Back
+            </button></a
+          >
+        </center>
+      </div>
+    </div>
+  </body>
+</html>

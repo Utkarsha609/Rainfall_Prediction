@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /> -->
+    <title>Rainfall-Prediction</title>
+    <link rel="stylesheet" href="/static/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=Merriweather&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      background-image: url('https://images.unsplash.com/photo-1562781105-c53c27ff6007?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZSUyMHJhaW58ZW58MHx8MHx8&w=1000&q=80');
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/19d7575d71/maharashtra/"
+      data-label_1="MAHARASHTRA"
+      data-label_2="WEATHER"
+      data-theme="gray"
+      >MAHARASHTRA WEATHER</a
+    >
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+    <br><div class="container">
+      <h1 class="text-center m-3 badge-primary text-wrap font1" style="height:70px;">
+        Rainfall Prediction &emsp;&emsp;&emsp;&emsp;
+          
+          <a href="/" style="color:white; font-size:18px">Home</a>&emsp;&emsp;
+         
+          <a href="/predictionhome" style="color:white; font-size:18px">Predictor</a>
+          
+      </h1><br><br>
+      <div class="card container" style="width: 50%">
+        <div class="card-body">
+          {% if data %}
+          <div>
+            <h3>State data</h3>
+            <p>{{ data }}</p>
+          </div>
+          {% endif %}
+
+          <form method="post" action="{{url_for('predict')}}">
+            <div class="form-group">
+              <label for="formGroupExampleInput1 font3">Choose a State: </label>
+
+              <select name="State">
+                <option value="MADHYA MAHARASHTRA" name="MM">
+                  MADHYA MAHARASHTRA
+                </option>
+                <option value="MARATHWADA" name="MW">MARATHWADA</option>
+                <option value="VIDARBHA" name="VD">VIDARBHA</option>
+                <option value="TAMIL NADU" name="TN">TAMIL NADU</option>
+                <option value="WEST RAJASTHAN" name="WR">WEST RAJASTHAN</option>
+                <option value="EAST RAJASTHAN" name="ER">EAST RAJASTHAN</option>
+              </select>
+            </div>
+            <!-- <input type="submit" /> -->
+            <center>
+              <button type="submit" class="btn btn-primary font2">
+                Submit
+              </button>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

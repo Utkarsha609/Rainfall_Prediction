@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /> -->
+    <title>Rainfall-Prediction</title>
+    <link rel="stylesheet" href="../static/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={{url_for('static',filename='style.css')}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Luxurious+Roman&family=Merriweather&family=PT+Serif&family=Texturina:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      background: url('https://images.unsplash.com/photo-1562781105-c53c27ff6007?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZSUyMHJhaW58ZW58MHx8MHx8&w=1000&q=80');
+	
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+  
+  <a
+  class="weatherwidget-io"
+  href="https://forecast7.com/en/19d7575d71/maharashtra/"
+  data-label_1="MAHARASHTRA"
+  data-label_2="WEATHER"
+  data-theme="gray"
+  >MAHARASHTRA WEATHER</a
+>
+<script>
+  !(function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://weatherwidget.io/js/widget.min.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  })(document, "script", "weatherwidget-io-js");
+</script>
+
+<input type="checkbox" id="check">
+  <!--header>
+  </div>
+  <h2><a href="/" class="logo"><div>RAINFALL<br> <span>PREDICTION</span></div> </a></h2>
+  <div class="navigation">
+    <a href="/">Home</a>
+   
+    <a href="/predictionhome">Predictor</a>
+  </div>
+  <label for="check">
+  <i class="fas fa-bars menu-btn"></i>
+  <i class="fas fa-times close-btn"></i>
+  </label>
+</header-->
+    <br><div class="container">
+      <h1 class="text-center m-3 badge-primary text-wrap font1" style="height:70px;">
+        Rainfall Prediction &emsp;&emsp;&emsp;&emsp;
+          
+          <a href="/" style="color:white; font-size:18px">Home</a>&emsp;&emsp;
+         
+          <a href="/predictionhome" style="color:white; font-size:18px">Predictor</a>
+          
+      </h1>
+      <br><br><div class="card container" style="width: 50%">
+        <div class="card-body">
+          <form action="{{url_for('result')}}" method="post">
+            <div class="form-group">
+              <label for="formGroupExampleInput1 font3">Please Select Month: </label>
+
+              <select name="Month" type="number" required>
+                <option value="1" name="1">January</option>
+                <option value="2" name="2">February</option>
+                <option value="3" name="3">March</option>
+                <option value="4" name="4">April</option>
+                <option value="5" name="5">May</option>
+                <option value="6" name="6">June</option>
+                <option value="7" name="7">July</option>
+                <option value="8" name="8">August</option>
+                <option value="9" name="9">September</option>
+                <option value="10" name="10">October</option>
+                <option value="11" name="11">November</option>
+                <option value="12" name="12">December</option>
+              </select>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput2 font3">Year: </label>
+              <input
+                type="number"
+                class="form-control"
+                id="formGroupExampleInput2"
+                name="Year"
+                min="1901"
+                max="2024"
+                required
+               />
+            </div>
+            <center>
+              <button type="submit" class="btn btn-primary font2">
+                Submit
+              </button>
+            </center>
+            <!-- <center><input type="submit" /></center> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

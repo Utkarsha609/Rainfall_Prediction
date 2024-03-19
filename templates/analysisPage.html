@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainfall-Prediction</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='analysis.css')}}">
+
+    <!-- custom js file link  -->
+  </head>
+  <body
+  style="
+      background: url('https://images.unsplash.com/photo-1562781105-c53c27ff6007?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZSUyMHJhaW58ZW58MHx8MHx8&w=1000&q=80');
+      
+      background-repeat: no-repeat;
+      background-size: cover;
+      "
+  >
+ 
+
+    <input type="checkbox" id="check">
+      <header>
+        </div>
+        <h2><a href="/" class="logo"><div>RAINFALL<br> <span>PREDICTION</span></div> </a></h2>
+        <div class="navigation">
+          <a href="/">Home</a>
+          <a href="/analysis">Analysis</a>
+    <a href="/predictionhome">Predictor</a>
+        </div>
+        <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+        </label>
+      </header>
+
+    <div class="container">
+      <h3 class="title">Rainfall Analysis</h3>
+
+      <div class="graphs-container">
+        <div class="graph" data-name="g-1">
+          <image src="{{url_for('static', filename='images/1.png')}}"></image>
+          <h3>Annual Rainfall v/s SubDIvisions</h3>
+        </div>
+
+        <div class="graph" data-name="g-2">
+          <image src="{{url_for('static', filename='images/2.png')}}"></image>
+          <h3>Rainfall in combined months</h3>
+        </div>
+
+        <div class="graph" data-name="g-3">
+          <image src="{{url_for('static', filename='images/3.png')}}"></image>
+          <h3>Rainfall over Years</h3>
+        </div>
+
+        <div class="graph" data-name="g-4">
+          <image src="{{url_for('static', filename='images/4.png')}}"></image>
+          <h3>Sub-Division v/s Rainfall in each month</h3>
+        </div>
+
+        <div class="graph" data-name="g-5">
+          <image src="{{url_for('static', filename='images/5.png')}}"></image>
+          <h3>Sub-Division v/s Rainfall in combined months</h3>
+        </div>
+
+        <div class="graph" data-name="g-6">
+          <image src="{{url_for('static', filename='images/6.png')}}"></image>
+          <h3>Year v/s Rainfall in each month</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="graphs-preview" id="graphs-preview">
+      <div class="preview" data-target="g-1">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/1.png')}}"></image>
+        <h3>Annual Rainfall v/s SubDivisions</h3>
+        <p>
+          Above plot shows the total rainfall from year 1901-2015 in each
+          subdivision, from the above plot we note that:-<br />
+          1)west Rajasthan,punjab,delhi have recieved the least rainfall<br />
+          2)Rainfall was more in western states tripura,meghalaya,Arunachal
+          Pradesh,kerala,Goa,karnatka,and also in Andaman.
+        </p>
+      </div>
+
+      <div class="preview" data-target="g-2">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/2.png')}}"></image>
+        <h3>Rainfall in combined months</h3>
+        <p>
+          From Above Graph we observe that :- <br />
+          1)combined jun,july,august,sept recieves huge rainfall.<br />
+          2)combined jan,feb recieves least Rainfall.<br />
+        </p>
+      </div>
+
+      <div class="preview" data-target="g-3">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/3.png')}}"></image>
+        <h3>Rainfall over Years</h3>
+        <p>
+          Above graph shows the Rainfall from 1901-2015 in India, we observe
+          that :- <br />
+          1)The maximum Rainfall was in 1950s.
+        </p>
+      </div>
+
+      <div class="preview" data-target="g-4">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/4.png')}}"></image>
+        <h3>Sub-Division v/s Rainfall in each month</h3>
+        <p>
+          Above plot shows the total Sub-Division rainfall from year 1901-2015
+          in each Month.
+        </p>
+      </div>
+
+      <div class="preview" data-target="g-5">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/5.png')}}" class="img5"></image>
+        <h3>Sub-Division v/s Rainfall in combined months</h3>
+        <p>
+          From the above two graph we observe that:- <br />
+          1)eastern states have good amont of rainfall in march,april,may.
+        </p>
+      </div>
+
+      <div class="preview" data-target="g-6">
+        <i class="fas fa-times"></i>
+        <image src="{{url_for('static', filename='images/6.png')}}"></image>
+        <h3>Year v/s Rainfall in each month</h3>
+        <p>
+          Above plot shows the Year vs Rainfall in each month, we observe that:-
+          <br />
+          1)July has heavy rainfall. <br />
+          2)Feb has least rainfall.
+        </p>
+      </div>
+    </div>
+
+    <script type = "text/javascript" src="{{url_for('static',filename='script.js')}}"></script>
+  </body>
+</html>
